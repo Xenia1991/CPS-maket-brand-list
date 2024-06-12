@@ -79,3 +79,77 @@ body {
 .swiper-pagination {
     top: 95px!important;
 }
+
+.show-more-button {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .brand-block {
+        min-width: 768px;
+    }
+
+    .heading-block {
+        min-width: 768px;
+    }
+
+    .brand-list-container {
+        position: relative;
+        height: 206px;
+        
+    }
+
+    .brand-list {
+        display:flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        padding-left: 0;
+    }
+
+    .brand-list
+    .brand-list__item {
+        width: 224px;
+        height: 72px;
+    }
+
+    .brand-list__link {
+        width: 224px;
+        height: 72px;
+        padding: 16px;
+    }
+
+    .show-more-button {
+        display: flex;
+        background-color: #F8F8F8;
+        cursor: pointer;
+        border: none;
+        padding: 5px;
+        padding-left: 24px;
+    }
+    
+    .show-more-button__image {
+        background-image: url("images/Expand.png");
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+    }
+    
+    .show-more-button__text {
+        font-family: "TTLakes", "Arial", sans-serif;
+        color: #1B1C21;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding-left: 5px;
+    }
+}
+
+@media (min-width: 1120px) {
+
+    .brand-block {
+        max-width: 1120px;
+        margin: 0 auto;
+    }
+
+}

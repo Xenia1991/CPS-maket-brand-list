@@ -33,12 +33,49 @@ body {
 .heading-block {
     box-sizing: border-box;
     min-width: 320px;
-    background-image: linear-gradient(to right, #F8F8F8 60%, #FFFFFF 100%);
+    background-image: linear-gradient(to right, #F8F8F8 50%, #FFFFFF 100%);
 }
 
 .heading-block__title {
     box-sizing: border-box;
     margin: 0;
     padding: 16px;
+    color: #7E7E82;
     text-transform: uppercase;
+}
+
+.brand-list-container {
+    position: relative;
+    height: 140px;
+}
+
+.brand-list {
+    padding-left: 16px;
+}
+
+.brand-list 
+.brand-list__item {
+    width: 240px;
+    height: 72px;
+}
+
+.brand-list__link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    box-sizing: border-box;
+    width: 240px;
+    height: 72px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    background-image: url("images/Go.png");
+    background-repeat: no-repeat;
+    background-size: content;
+    background-position: 90% 50%;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+}
+
+.swiper-pagination {
+    top: 95px!important;
 }

@@ -33,7 +33,7 @@ body {
 .heading-block {
     box-sizing: border-box;
     min-width: 320px;
-    background-image: linear-gradient(to right, #F8F8F8 50%, #FFFFFF 100%);
+    background-image: linear-gradient(to right, #F8F8F8 40%, #FFFFFF 100%);
 }
 
 .heading-block__title {
@@ -53,7 +53,6 @@ body {
     padding-left: 16px;
 }
 
-.brand-list 
 .brand-list__item {
     width: 240px;
     height: 72px;
@@ -76,8 +75,11 @@ body {
     border-radius: 10px;
 }
 
+/* Повышаю специфичность селектора, чтобы эти стили были в приоритете перед библиотечными, 
+т.к. там специфиичность задана через селектор дочерних элементов*/
+.brand-block
 .swiper-pagination {
-    top: 95px!important;
+    bottom: 18px;
 }
 
 .show-more-button {
@@ -145,6 +147,10 @@ body {
         background-image: url("images/Expand.png");
         background-repeat: no-repeat;
         background-position: 0 -1px;
+    }
+
+    .swiper-pagination {
+        display: none;
     }
 }
 

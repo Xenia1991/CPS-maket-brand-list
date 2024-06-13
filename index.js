@@ -1,49 +1,35 @@
 let swiper; 
 const screenWidth = window.window.innerWidth;
-
-if (screenWidth < 768) {
-    swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            spaceBetween: 16,
-            slidesPerView: 'auto',
-
-            pagination: {
-            el: '.swiper-pagination',
-            enabled: true,
-            clickable: true,
-        },
-    });
-}
-
-window.addEventListener('resize', function (event) {
-    if (swiper && event.target.innerWidth >= 768) {
-            swiper.destroy(true, true);
-            swiper = null;
-            console.log(swiper, 'destroyed')
-    } else if(!swiper && event.target.innerWidth < 768) {
-       swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            spaceBetween: 16,
-            slidesPerView: 'auto',
-    
-            pagination: {
-            el: '.swiper-pagination',
-            enabled: true,
-            clickable: true,
-            },
-        }); 
-        console.log(swiper, 'created')
-    }
-})
-
 const buttonShowMore  = document.querySelector('.show-more-button');
 const buttonShowMoreText = buttonShowMore.querySelector('.show-more-button__text');
 const brandListContainer = document.querySelector('.brand-list-container');
+const swiperOptions = {
+    direction: 'horizontal',
+    loop: true,
+    spaceBetween: 16,
+    slidesPerView: 'auto',
 
-buttonShowMore.addEventListener('click', function (event) {
-    event.preventDefault();
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+};
+
+if (screenWidth < 768) {
+    swiper = new Swiper('.swiper', swiperOptions);
+};
+
+const resizeScreen = function (event) {
+    if (swiper && event.target.innerWidth >= 768) {
+            swiper.enable();
+            swiper.destroy(true, true);
+            swiper = null;
+    } else if(!swiper && event.target.innerWidth < 768) {
+       swiper = new Swiper('.swiper', swiperOptions);
+    };
+};
+
+const toggleContainer = function () {
     if (brandListContainer.classList.contains('brand-list-container')) {
         brandListContainer.classList.remove('brand-list-container');
         brandListContainer.classList.add('brand-list-container--opened');
@@ -55,4 +41,7 @@ buttonShowMore.addEventListener('click', function (event) {
         buttonShowMoreText.textContent = 'Показать все';
         buttonShowMoreText.style.backgroundImage = 'url("images/Expand.png")';
     }
-});
+};
+
+window.addEventListener('resize', resizeScreen);
+buttonShowMore.addEventListener('click', toggleContainer);

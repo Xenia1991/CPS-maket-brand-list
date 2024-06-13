@@ -146,10 +146,6 @@ body {
         background-repeat: no-repeat;
         background-position: 0 -1px;
     }
-
-    .swiper-pagination {
-        display: none!important;
-    }
 }
 
 @media (min-width: 1120px) {
